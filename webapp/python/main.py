@@ -880,14 +880,11 @@ def competition_ranking_handler(competition_id):
         abort(404, "competition not found")
 
     now = int(datetime.now().timestamp())
-    tenant_row = admin_db.execute("SELECT id FROM tenant WHERE id = %s", viewer.tenant_id).fetchone()
-    if not tenant_row:
-        raise RuntimeError(f"Error Select tenant: id={viewer.tenant_id}")
 
     admin_db.execute(
         "INSERT INTO visit_history (player_id, tenant_id, competition_id, created_at, updated_at) VALUES (%s, %s, %s, %s, %s)",
         viewer.player_id,
-        tenant_row.id,
+        viewer.tenant_id,
         competition_id,
         now,
         now,
@@ -906,7 +903,7 @@ def competition_ranking_handler(competition_id):
     try:
         player_score_rows = tenant_db.execute(
             "SELECT player_id, score, row_num FROM player_score WHERE tenant_id = ? AND competition_id = ? ORDER BY score DESC, row_num ASC",
-            tenant_row.id,
+            viewer.tenant_id,
             competition_id,
         ).fetchall()
 
