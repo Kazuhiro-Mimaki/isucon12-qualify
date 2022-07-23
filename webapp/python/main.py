@@ -804,7 +804,7 @@ def player_handler(player_id: str):
     if not player:
         abort(404, "player not found")
 
-    competition_rows = tenant_db.execute("SELECT * FROM competition WHERE tenant_id = ? ORDER BY created_at ASC", viewer.tenant_id).fetchall()
+    competition_rows = tenant_db.execute("SELECT id, title FROM competition WHERE tenant_id = ? ORDER BY created_at ASC", viewer.tenant_id).fetchall()
 
     # player_scoreを読んでいるときに更新が走ると不整合が起こるのでロックを取得する
     lock_file = flock_by_tenant_id(viewer.tenant_id)
@@ -907,7 +907,6 @@ def competition_ranking_handler(competition_id):
             competition_id,
         ).fetchall()
 
-        #ranks = []
         paged_ranks = []
         scored_player_set = {}
         for i, player_score_row in enumerate(player_score_rows):
