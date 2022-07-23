@@ -907,38 +907,26 @@ def competition_ranking_handler(competition_id):
             competition_id,
         ).fetchall()
 
-        ranks = []
+        #ranks = []
+        paged_ranks = []
         scored_player_set = {}
-        for player_score_row in player_score_rows:
+        for i, player_score_row in enumerate(player_score_rows):
+            if i < rank_after:
+                continue
             # player_scoreが同一player_id内ではrow_numの降順でソートされているので
             # 現れたのが2回目以降のplayer_idはより大きいrow_numでスコアが出ているとみなせる
             if scored_player_set.get(player_score_row.player_id) is not None:
                 continue
 
             scored_player_set[player_score_row.player_id] = {}
-            ranks.append(
-                CompetitionRank(
-                    rank=0,
-                    score=player_score_row.score,
-                    player_id=player_score_row.player_id,
-                    player_display_name=player_score_row.display_name,
-                    row_num=player_score_row.row_num,
-                )
-            )
-
-        paged_ranks = []
-        for i, rank in enumerate(ranks):
-            if i < rank_after:
-                continue
-            paged_ranks.append(
-                CompetitionRank(
-                    rank=i + 1,
-                    score=rank.score,
-                    player_id=rank.player_id,
-                    player_display_name=rank.player_display_name,
-                    row_num=0,
-                )
-            )
+            rank = CompetitionRank(
+                      rank=i + 1,
+                      score=player_score_row.score,
+                      player_id=player_score_row.player_id,
+                      player_display_name=player_score_row.display_name,
+                      row_num=0,
+                    )
+            paged_ranks.append(rank)
             if len(paged_ranks) >= 100:
                 break
     finally:

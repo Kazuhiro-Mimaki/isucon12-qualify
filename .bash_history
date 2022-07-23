@@ -300,3 +300,28 @@ cat 97.lock
 cat 97.db
 sudo vim webapp/python/main.py 
 cd
+git commit -m "途中経過"
+glo
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+cd /var/log/nginx
+alp --sum --file access.log -r --include "player"
+alp --help
+alp --help long
+alp --help-long
+alp --sum --file access.log -r --includes "player"
+alp json --help
+alp json
+alp --help
+alp --sum --file access.log -r --aggregates "/api/organizer/player"
+alp --sum --file access.log -r --aggregates "api/player/competition/9fa5278c/ranking[0-9]+"
+alp --sum --file access.log -r --aggregates "api/player/competition/9fa5278c/[0-9]+/ranking"
+alp --sum --file access.log -r --aggregates "/api/player/competition/9fa52e2a/ranking"
+alp --sum --file access.log -r --aggregates "/api/player/competition/[0-9]+/ranking"
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-9]+/ranking'
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking'
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+'
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]*/score'
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score'
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish '
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish,/api/organizer/player/[0-z]+/disqualified '
