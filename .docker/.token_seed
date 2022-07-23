@@ -1,0 +1,8 @@
+{
+  "public.ecr.aws": {
+    "Seed": "JS5n7e9Mh5gW5YIg/mQUuQ=="
+  },
+  "registry-1.docker.io": {
+    "Seed": "4MQ7vfeWiN9KuSq6u7IT7g=="
+  }
+}
