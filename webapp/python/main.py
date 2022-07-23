@@ -812,11 +812,11 @@ def player_handler(player_id: str):
         raise RuntimeError("error flock_by_tenant_id")
 
     try:
-        player_score_rows = []
+        player_score_details = []
         for competition_row in competition_rows:
             # 最後にCSVに登場したスコアを採用する = row_numが一番大きいもの
             player_score_row = tenant_db.execute(
-                "SELECT * FROM player_score WHERE tenant_id = ? AND competition_id = ? AND player_id = ? ORDER BY row_num DESC LIMIT 1",
+                "SELECT score FROM player_score WHERE tenant_id = ? AND competition_id = ? AND player_id = ? ORDER BY row_num DESC LIMIT 1",
                 viewer.tenant_id,
                 competition_row.id,
                 player.id,
@@ -824,15 +824,8 @@ def player_handler(player_id: str):
             if not player_score_row:
                 # 行がない = スコアが記録されてない
                 continue
-            player_score_rows.append(PlayerScoreRow(**player_score_row))
-
-        player_score_details = []
-        for player_score_row in player_score_rows:
-            competition = retrieve_competition(tenant_db, player_score_row.competition_id)
-            if not competition:
-                continue
             player_score_details.append(
-                PlayerScoreDetail(competition_title=competition.title, score=player_score_row.score)
+                PlayerScoreDetail(competition_title=competition_row.title, score=player_score_row.score)
             )
     finally:
         fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)

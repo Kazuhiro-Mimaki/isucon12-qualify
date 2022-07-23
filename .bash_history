@@ -325,3 +325,8 @@ alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/rank
 alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score'
 alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish '
 alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish,/api/organizer/player/[0-z]+/disqualified '
+mysql -u isucon -p
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish,/api/organizer/player/[0-z]+/disqualified '
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish,/api/organizer/player/[0-z]+/disqualified'
+cd /var/log/nginx
+alp --sum --file access.log -r --aggregates '/api/player/competition/[0-z]+/ranking,/api/player/player/[0-z]+, /api/organizer/competition/[0-z]+/score, /api/organizer/competition/[0-z]+/finish,/api/organizer/player/[0-z]+/disqualified'
