@@ -11,8 +11,12 @@
 # hlsearch on (H) or off (h):
 ~h
 # Command Line History (newest to oldest):
+:q!
+|2,0,1658546739,,"q!"
+:q
+|2,0,1658544430,,"q"
 :wq
-|2,0,1658540088,,"wq"
+|2,0,1658544410,,"wq"
 :Wq
 |2,0,1658540086,,"Wq"
 
@@ -27,24 +31,76 @@
 # Registers:
 
 # File marks:
-'0  1  12  ~/.gitignore
-|4,48,1,12,1658540088,"~/.gitignore"
-'1  8  32  ~/.ssh/id_ed25519
-|4,49,8,32,1658539895,"~/.ssh/id_ed25519"
+'0  12  0  /etc/nginx/nginx.conf
+|4,48,12,0,1658546739,"/etc/nginx/nginx.conf"
+'1  93  1  /etc/nginx/nginx.conf
+|4,49,93,1,1658544434,"/etc/nginx/nginx.conf"
+'2  93  1  /etc/nginx/nginx.conf
+|4,50,93,1,1658544434,"/etc/nginx/nginx.conf"
+'3  1  12  ~/.gitignore
+|4,51,1,12,1658540088,"~/.gitignore"
+'4  1  12  ~/.gitignore
+|4,52,1,12,1658540088,"~/.gitignore"
+'5  8  32  ~/.ssh/id_ed25519
+|4,53,8,32,1658539895,"~/.ssh/id_ed25519"
+'6  8  32  ~/.ssh/id_ed25519
+|4,54,8,32,1658539895,"~/.ssh/id_ed25519"
 
 # Jumplist (newest first):
+-'  12  0  /etc/nginx/nginx.conf
+|4,39,12,0,1658546739,"/etc/nginx/nginx.conf"
+-'  93  1  /etc/nginx/nginx.conf
+|4,39,93,1,1658546686,"/etc/nginx/nginx.conf"
+-'  93  1  /etc/nginx/nginx.conf
+|4,39,93,1,1658544434,"/etc/nginx/nginx.conf"
+-'  1  0  /etc/nginx/nginx.conf
+|4,39,1,0,1658544314,"/etc/nginx/nginx.conf"
+-'  1  0  /etc/nginx/nginx.conf
+|4,39,1,0,1658544314,"/etc/nginx/nginx.conf"
+-'  1  12  ~/.gitignore
+|4,39,1,12,1658540088,"~/.gitignore"
+-'  1  12  ~/.gitignore
+|4,39,1,12,1658540088,"~/.gitignore"
+-'  1  12  ~/.gitignore
+|4,39,1,12,1658540088,"~/.gitignore"
 -'  1  12  ~/.gitignore
 |4,39,1,12,1658540088,"~/.gitignore"
 -'  8  32  ~/.ssh/id_ed25519
 |4,39,8,32,1658539895,"~/.ssh/id_ed25519"
 -'  8  32  ~/.ssh/id_ed25519
 |4,39,8,32,1658539895,"~/.ssh/id_ed25519"
+-'  8  32  ~/.ssh/id_ed25519
+|4,39,8,32,1658539895,"~/.ssh/id_ed25519"
+-'  8  32  ~/.ssh/id_ed25519
+|4,39,8,32,1658539895,"~/.ssh/id_ed25519"
+-'  8  32  ~/.ssh/id_ed25519
+|4,39,8,32,1658539895,"~/.ssh/id_ed25519"
+-'  8  32  ~/.ssh/id_ed25519
+|4,39,8,32,1658539895,"~/.ssh/id_ed25519"
+-'  1  0  ~/.ssh/id_ed25519
+|4,39,1,0,1658539888,"~/.ssh/id_ed25519"
+-'  1  0  ~/.ssh/id_ed25519
+|4,39,1,0,1658539888,"~/.ssh/id_ed25519"
+-'  1  0  ~/.ssh/id_ed25519
+|4,39,1,0,1658539888,"~/.ssh/id_ed25519"
+-'  1  0  ~/.ssh/id_ed25519
+|4,39,1,0,1658539888,"~/.ssh/id_ed25519"
 -'  1  0  ~/.ssh/id_ed25519
 |4,39,1,0,1658539888,"~/.ssh/id_ed25519"
 -'  1  0  ~/.ssh/id_ed25519
 |4,39,1,0,1658539888,"~/.ssh/id_ed25519"
 
 # History of marks within files (newest to oldest):
+
+> /etc/nginx/nginx.conf
+	*	1658546735	0
+	"	12	0
+	^	12	0
+	.	12	5
+	+	12	0
+	+	49	0
+	+	50	0
+	+	12	5
 
 > ~/.gitignore
 	*	1658540086	0

@@ -37,7 +37,8 @@ app = Flask(__name__)
 
 def connect_admin_db() -> Engine:
     """管理用DBに接続する"""
-    host = os.getenv("ISUCON_DB_HOST", "127.0.0.1")
+    #host = os.getenv("ISUCON_DB_HOST", "127.0.0.1")
+    host = os.getenv("ISUCON_DB_HOST", "192.168.0.11")
     port = os.getenv("ISUCON_DB_PORT", 3306)
     user = os.getenv("ISUCON_DB_USER", "isucon")
     password = os.getenv("ISUCON_DB_PASSWORD", "isucon")
