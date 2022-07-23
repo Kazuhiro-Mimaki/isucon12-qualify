@@ -880,7 +880,7 @@ def competition_ranking_handler(competition_id):
         abort(404, "competition not found")
 
     now = int(datetime.now().timestamp())
-    tenant_row = admin_db.execute("SELECT * FROM tenant WHERE id = %s", viewer.tenant_id).fetchone()
+    tenant_row = admin_db.execute("SELECT id FROM tenant WHERE id = %s", viewer.tenant_id).fetchone()
     if not tenant_row:
         raise RuntimeError(f"Error Select tenant: id={viewer.tenant_id}")
 
@@ -905,7 +905,7 @@ def competition_ranking_handler(competition_id):
 
     try:
         player_score_rows = tenant_db.execute(
-            "SELECT * FROM player_score WHERE tenant_id = ? AND competition_id = ? ORDER BY row_num DESC",
+            "SELECT player_id, score, row_num FROM player_score WHERE tenant_id = ? AND competition_id = ? ORDER BY score DESC, row_num ASC",
             tenant_row.id,
             competition_id,
         ).fetchall()
@@ -931,9 +931,6 @@ def competition_ranking_handler(competition_id):
                     row_num=player_score_row.row_num,
                 )
             )
-
-        ranks.sort(key=lambda rank: rank.row_num)
-        ranks.sort(key=lambda rank: rank.score, reverse=True)
 
         paged_ranks = []
         for i, rank in enumerate(ranks):
