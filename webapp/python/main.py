@@ -902,7 +902,7 @@ def competition_ranking_handler(competition_id):
 
     try:
         player_score_rows = tenant_db.execute(
-            "SELECT player_id, score, row_num FROM player_score WHERE tenant_id = ? AND competition_id = ? ORDER BY score DESC, row_num ASC",
+            "SELECT s.player_id, s.score, s.row_num, p.display_name FROM player_score s JOIN player p ON s.player_id=p.id WHERE s.tenant_id = ? AND s.competition_id = ? ORDER BY s.score DESC, s.row_num ASC",
             viewer.tenant_id,
             competition_id,
         ).fetchall()
@@ -916,15 +916,12 @@ def competition_ranking_handler(competition_id):
                 continue
 
             scored_player_set[player_score_row.player_id] = {}
-            player = retrieve_player(tenant_db, player_score_row.player_id)
-            if not player:
-                raise RuntimeError("error retrievePlayer")
             ranks.append(
                 CompetitionRank(
                     rank=0,
                     score=player_score_row.score,
-                    player_id=player.id,
-                    player_display_name=player.display_name,
+                    player_id=player_score_row.player_id,
+                    player_display_name=player_score_row.display_name,
                     row_num=player_score_row.row_num,
                 )
             )

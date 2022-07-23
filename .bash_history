@@ -234,3 +234,69 @@ alp --help
 alp --help-long
 alp --sum --file access.log -r
 alp --sum --file access.log -r --matching-groups
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo rm -rf /var/log/nginx/access.log 
+sudo systemctl reload nginx
+git status
+git diff
+ls
+git add .
+git commit -m "revert"
+git remote add origin git@github.com:Kazuhiro-Mimaki/isucon12-qualify.git
+git reset --hard ^HEAD
+git reset --hard HEAD^
+sudo systemctl restart isuports.service
+sudo systemctl reload nginx
+sudo systemctl restart mysql
+mysql -u isucon -p
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+git add .
+git commit -m "rever"
+git reset --hard HEAD^
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo rm -rf /var/log/nginx/access.log 
+sudo rm -rf /var/log/mysql/mysql-slow.log
+sudo systemctl restart mysql
+sudo systemctl reload nginx
+git add .
+git commit -m "途中経過"
+git push origin master
+sudo vim webapp/python/main.py 
+git status
+sudo vim webapp/python/main.py 
+sudo systemctl restart isuports.service
+sudo vim webapp/python/main.py 
+git add .
+git commit -m "途中経過"
+sudo vim webapp/python/main.py 
+ls
+cd webapp/
+ls
+cd tenant_db/
+ls
+cat 97.lock
+cat 97.db
+sudo vim webapp/python/main.py 
+cd
